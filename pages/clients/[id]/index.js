@@ -1,4 +1,4 @@
-function ClientProjectPage() {
+function ClientProjectsPage() {
   return (
     <div>
       <h1>The Projects of a Given Client</h1>
@@ -6,4 +6,4 @@ function ClientProjectPage() {
   );
 }
 
-export default ClientProjectPage;
+export default ClientProjectsPage;
