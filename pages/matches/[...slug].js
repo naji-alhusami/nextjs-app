@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 
-import { getFilteredEvents } from "../../dummy-data";
-import EventList from "../../components/matches/match-list";
+import { getFilteredMatches } from "../../dummy-data";
+import MatchList from "../../components/matches/match-list";
 import ResultsTitle from "../../components/matches/results-title";
 import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
@@ -42,19 +42,19 @@ function FilteredMatchesPage() {
     );
   }
 
-  const filteredEvents = getFilteredEvents({
+  const filteredMatches = getFilteredMatches({
     year: numYear,
     month: numMonth,
   });
 
-  if (!filteredEvents || filteredEvents.length === 0) {
+  if (!filteredMatches || filteredMatches.length === 0) {
     return (
       <Fragment>
         <ErrorAlert>
-          <p>No events found for the chosen filter!</p>
+          <p>No matches found for the chosen filter!</p>
         </ErrorAlert>
         <div className="center">
-          <Button link="/events">Show All Events</Button>
+          <Button link="/matches">Show All Matches</Button>
         </div>
       </Fragment>
     );
@@ -65,7 +65,7 @@ function FilteredMatchesPage() {
   return (
     <Fragment>
       <ResultsTitle date={date} />
-      <EventList items={filteredEvents} />
+      <MatchList items={filteredEvents} />
     </Fragment>
   );
 }
