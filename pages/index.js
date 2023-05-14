@@ -1,12 +1,12 @@
-import { getFeaturedEvents } from '../dummy-data';
-import EventList from '../components/events/event-list';
+import { getFeaturedMatches } from "@/dummy-data";
+import MatchList from "../components/matches/match-list";
 
 function HomePage() {
-  const featuredEvents = getFeaturedEvents();
+  const featuredMatches = getFeaturedMatches();
 
   return (
     <div>
-      <EventList items={featuredEvents} />
+      <MatchList items={featuredMatches} />
     </div>
   );
 }
