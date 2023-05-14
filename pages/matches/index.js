@@ -1,23 +1,23 @@
 import { useRouter } from "next/router";
 
-import { getAllEvents } from "../../dummy-data";
-import EventList from "../../components/matches/match-list";
-import EventsSearch from "../../components/matches/events-search";
+import { getAllMatches } from "../../dummy-data";
+import MatchList from "../../components/matches/match-list";
+import MatchesSearch from "@/components/matches/matches-search";
 
 function AllMatchesPage() {
   const router = useRouter();
-  const events = getAllEvents();
+  const matches = getAllMatches();
 
-  function findEventsHandler(year, month) {
-    const fullPath = `/events/${year}/${month}`;
+  function findMatchesHandler(year, month) {
+    const fullPath = `/matches/${year}/${month}`;
 
     router.push(fullPath);
   }
 
   return (
     <>
-      <EventsSearch onSearch={findEventsHandler} />
-      <EventList items={events} />
+      <MatchesSearch onSearch={findMatchesHandler} />
+      <MatchList items={events} />
     </>
   );
 }

@@ -1,9 +1,9 @@
 import { useRef } from "react";
 
 import Button from "../ui/button";
-import classes from "./events-search.module.css";
+import classes from "./matches-search.module.css";
 
-function EventsSearch(props) {
+function MatchesSearch(props) {
   const yearInputRef = useRef();
   const monthInputRef = useRef();
 
@@ -22,8 +22,8 @@ function EventsSearch(props) {
         <div className={classes.control}>
           <label htmlFor="year">Year</label>
           <select id="year" ref={yearInputRef}>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
+            <option value="2021">2022</option>
+            <option value="2022">2023</option>
           </select>
         </div>
         <div className={classes.control}>
@@ -44,9 +44,9 @@ function EventsSearch(props) {
           </select>
         </div>
       </div>
-      <Button>Find Events</Button>
+      <Button>Find Matches</Button>
     </form>
   );
 }
 
-export default EventsSearch;
+export default MatchesSearch;
