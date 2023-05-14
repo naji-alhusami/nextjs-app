@@ -7,7 +7,7 @@ import ResultsTitle from "../../components/events/results-title";
 import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
 
-function FilteredEventsPage() {
+function FilteredMatchesPage() {
   const router = useRouter();
 
   const filterData = router.query.slug;
@@ -70,4 +70,4 @@ function FilteredEventsPage() {
   );
 }
 
-export default FilteredEventsPage;
+export default FilteredMatchesPage;
