@@ -1,55 +1,55 @@
-const DUMMY_EVENTS = [
+const DUMMY_MATCHES = [
     {
-      id: 'e1',
-      title: 'Programming for everyone',
+      id: 'm1',
+      title: 'FC Barcelona VS Real Madrid',
       description:
         'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
-      location: 'Somestreet 25, 12345 San Somewhereo',
-      date: '2021-05-12',
-      image: 'images/coding-event.jpg',
-      isFeatured: false,
-    },
-    {
-      id: 'e2',
-      title: 'Networking for introverts',
-      description:
-        "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
-      location: 'New Wall Street 5, 98765 New Work',
-      date: '2021-05-30',
-      image: 'images/introvert-event.jpg',
+      location: 'Camp Nou, Barcelona',
+      date: '2023-05-12',
+      image: 'images/BAR-RM.png',
       isFeatured: true,
     },
     {
-      id: 'e3',
-      title: 'Networking for extroverts',
+      id: 'm2',
+      title: 'Elche FC VS FC Barcelona',
+      description:
+        "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
+      location: 'Estadio Manuel Martínez',
+      date: '2023-05-30',
+      image: 'images/introvert-event.jpg',
+      isFeatured: false,
+    },
+    {
+      id: 'm3',
+      title: 'AC Milan VS FC Barcelona',
       description:
         'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
-      location: 'My Street 12, 10115 Broke City',
-      date: '2022-04-10',
+      location: 'San Siro',
+      date: '2023-06-10',
       image: 'images/extrovert-event.jpg',
       isFeatured: true,
     },
   ];
   
-  export function getFeaturedEvents() {
-    return DUMMY_EVENTS.filter((event) => event.isFeatured);
+  export function getFeaturedMatches() {
+    return DUMMY_MATCHES.filter((match) => match.isFeatured);
   }
   
-  export function getAllEvents() {
-    return DUMMY_EVENTS;
+  export function getAllMatches() {
+    return DUMMY_MATCHES;
   }
   
-  export function getFilteredEvents(dateFilter) {
+  export function getFilteredMatches(dateFilter) {
     const { year, month } = dateFilter;
   
-    let filteredEvents = DUMMY_EVENTS.filter((event) => {
-      const eventDate = new Date(event.date);
-      return eventDate.getFullYear() === year && eventDate.getMonth() === month - 1;
+    let filteredMatches = DUMMY_MATCHES.filter((match) => {
+      const matchDate = new Date(match.date);
+      return matchDate.getFullYear() === year && matchDate.getMonth() === month - 1;
     });
   
-    return filteredEvents;
+    return filteredMatches;
   }
   
-  export function getEventById(id) {
-    return DUMMY_EVENTS.find((event) => event.id === id);
+  export function getMatchById(id) {
+    return DUMMY_MATCHES.find((match) => match.id === id);
   }
