@@ -1,39 +1,39 @@
 import { useRouter } from "next/router";
 
-import { getEventById } from "../../dummy-data";
-import EventSummary from "../../components/event-detail/event-summary";
-import EventLogistics from "../../components/event-detail/event-logistics";
-import EventContent from "../../components/event-detail/event-content";
+import { getMatchById } from "../../dummy-data";
+import MatchSummary from "../../components/match-detail/match-summary";
+import MatchLogistics from "../../components/match-detail/match-logistics";
+import MatchContent from "../../components/match-detail/match-content";
 import ErrorAlert from "../../components/ui/error-alert";
 
-function EventDetailPage() {
+function MatchDetailPage() {
   const router = useRouter();
 
-  const eventId = router.query.eventId;
-  const event = getEventById(eventId);
+  const matchId = router.query.matchId;
+  const match = getMatchById(matchId);
 
-  if (!event) {
+  if (!match) {
     return (
       <ErrorAlert>
-        <p>No event found!</p>
+        <p>No match found!</p>
       </ErrorAlert>
     );
   }
 
   return (
     <>
-      <EventSummary title={event.title} />
-      <EventLogistics
-        date={event.date}
-        address={event.location}
-        image={event.image}
-        imageAlt={event.title}
+      <MatchSummary title={match.title} />
+      <MatchLogistics
+        date={match.date}
+        address={match.location}
+        image={match.image}
+        imageAlt={match.title}
       />
-      <EventContent>
-        <p>{event.description}</p>
-      </EventContent>
+      <MatchContent>
+        <p>{match.description}</p>
+      </MatchContent>
     </>
   );
 }
 
-export default EventDetailPage;
+export default MatchDetailPage;

@@ -1,6 +1,6 @@
-import classes from './event-summary.module.css';
+import classes from './match-summary.module.css';
 
-function EventSummary(props) {
+function MatchSummary(props) {
   const { title } = props;
 
   return (
@@ -10,4 +10,4 @@ function EventSummary(props) {
   );
 }
 
-export default EventSummary;
+export default MatchSummary;
