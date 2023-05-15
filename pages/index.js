@@ -1,14 +1,23 @@
-import { getFeaturedMatches } from "@/dummy-data";
+import { getFeaturedMatches } from "../helpers/api-util";
 import MatchList from "../components/matches/match-list";
 
-function HomePage() {
-  const featuredMatches = getFeaturedMatches();
+function HomePage(props) {
 
   return (
     <div>
-      <MatchList items={featuredMatches} />
+      <MatchList items={props.matches} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const featuredMatches = await getFeaturedMatches();
+
+  return {
+    props: {
+      matches: featuredMatches,
+    },
+  };
 }
 
 export default HomePage;

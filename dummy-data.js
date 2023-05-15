@@ -13,7 +13,7 @@ const DUMMY_MATCHES = [
       id: 'm2',
       title: 'Elche FC VS FC Barcelona',
       description:
-        "this should an easy match for barcelona who is leading the la liga teams in standings.",
+        "this should be an easy match for barcelona who is leading the la liga teams in standings.",
       location: 'Estadio Manuel Martínez',
       date: '2023-05-30',
       image: 'images/Elche-BAR.jpg',
@@ -23,7 +23,7 @@ const DUMMY_MATCHES = [
       id: 'm3',
       title: 'AC Milan VS FC Barcelona',
       description:
-        'another important match which will be held in San Siro as the second match between both teams in UEFA CHAMPIONS LEAGUE.',
+        'Another important match which will be held in San Siro as the second match between both teams in UEFA CHAMPIONS LEAGUE.',
       location: 'San Siro',
       date: '2023-06-10',
       image: 'images/BAR-MILAN.jpg',
