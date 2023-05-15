@@ -19,3 +19,8 @@ export async function getFeaturedMatches() {
   const allMatches = await getAllMatches();
   return allMatches.filter((match) => match.isFeatured);
 }
+
+export async function getMatchById(id) {
+  const allMatches = await getAllMatches();
+  return allMatches.find((match) => match.id === id);
+}

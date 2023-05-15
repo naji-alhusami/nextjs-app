@@ -1,16 +1,11 @@
-import { useRouter } from "next/router";
-
-import { getMatchById } from "../../dummy-data";
+import { getMatchById, getAllMatches } from "../../helpers/api-util";
 import MatchSummary from "../../components/match-detail/match-summary";
 import MatchLogistics from "../../components/match-detail/match-logistics";
 import MatchContent from "../../components/match-detail/match-content";
 import ErrorAlert from "../../components/ui/error-alert";
 
-function MatchDetailPage() {
-  const router = useRouter();
-
-  const matchId = router.query.matchId;
-  const match = getMatchById(matchId);
+function MatchDetailPage(props) {
+  const match = props.selectedMatch;
 
   if (!match) {
     return (
@@ -34,6 +29,29 @@ function MatchDetailPage() {
       </MatchContent>
     </>
   );
+}
+
+export async function getStaticProps(context) {
+  const matchId = context.params.matchId;
+
+  const match = await getMatchById(matchId);
+
+  return {
+    props: {
+      selectedMatch: match,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const matches = await getAllMatches();
+
+  const paths = matches.map((match) => ({ params: { matchId: match.id } }));
+
+  return {
+    paths: paths,
+    fallback: false,
+  };
 }
 
 export default MatchDetailPage;
