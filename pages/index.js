@@ -2,7 +2,6 @@ import { getFeaturedMatches } from "../helpers/api-util";
 import MatchList from "../components/matches/match-list";
 
 function HomePage(props) {
-
   return (
     <div>
       <MatchList items={props.matches} />
@@ -17,6 +16,7 @@ export async function getStaticProps() {
     props: {
       matches: featuredMatches,
     },
+    revalidate: 1800,
   };
 }
 

@@ -1,17 +1,16 @@
-import { getMatchById, getAllMatches } from "../../helpers/api-util";
+import { getMatchById, getFeaturedMatches } from "../../helpers/api-util";
 import MatchSummary from "../../components/match-detail/match-summary";
 import MatchLogistics from "../../components/match-detail/match-logistics";
 import MatchContent from "../../components/match-detail/match-content";
-import ErrorAlert from "../../components/ui/error-alert";
 
 function MatchDetailPage(props) {
   const match = props.selectedMatch;
 
   if (!match) {
     return (
-      <ErrorAlert>
-        <p>No match found!</p>
-      </ErrorAlert>
+      <div className="center">
+        <p>Loading...</p>
+      </div>
     );
   }
 
@@ -40,17 +39,18 @@ export async function getStaticProps(context) {
     props: {
       selectedMatch: match,
     },
+    revalidate: 30,
   };
 }
 
 export async function getStaticPaths() {
-  const matches = await getAllMatches();
+  const matches = await getFeaturedMatches();
 
   const paths = matches.map((match) => ({ params: { matchId: match.id } }));
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
