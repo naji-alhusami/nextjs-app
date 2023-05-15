@@ -17,7 +17,7 @@ function AllMatchesPage() {
   return (
     <>
       <MatchesSearch onSearch={findMatchesHandler} />
-      <MatchList items={events} />
+      <MatchList items={matches} />
     </>
   );
 }

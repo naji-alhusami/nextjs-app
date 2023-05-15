@@ -3,7 +3,7 @@ const DUMMY_MATCHES = [
       id: 'm1',
       title: 'FC Barcelona VS Real Madrid',
       description:
-        'Everyone can learn to code! Yes, everyone! In this live event, we are going to go through all the key basics and get you started with programming as well.',
+        'This is an important match (classico between madrid and barcelona in camp nou, in La Liga competition.',
       location: 'Camp Nou, Barcelona',
       date: '2023-05-12',
       image: 'images/BAR-RM.png',
@@ -13,20 +13,20 @@ const DUMMY_MATCHES = [
       id: 'm2',
       title: 'Elche FC VS FC Barcelona',
       description:
-        "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
+        "this should an easy match for barcelona who is leading the la liga teams in standings.",
       location: 'Estadio Manuel Martínez',
       date: '2023-05-30',
-      image: 'images/introvert-event.jpg',
+      image: 'images/Elche-BAR.jpg',
       isFeatured: false,
     },
     {
       id: 'm3',
       title: 'AC Milan VS FC Barcelona',
       description:
-        'You probably need no help with networking in general. But focusing your energy correctly - that is something where most people can improve.',
+        'another important match which will be held in San Siro as the second match between both teams in UEFA CHAMPIONS LEAGUE.',
       location: 'San Siro',
       date: '2023-06-10',
-      image: 'images/extrovert-event.jpg',
+      image: 'images/BAR-MILAN.jpg',
       isFeatured: true,
     },
   ];

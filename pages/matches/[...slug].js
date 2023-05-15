@@ -65,7 +65,7 @@ function FilteredMatchesPage() {
   return (
     <Fragment>
       <ResultsTitle date={date} />
-      <MatchList items={filteredEvents} />
+      <MatchList items={filteredMatches} />
     </Fragment>
   );
 }

@@ -11,7 +11,7 @@ function MainHeader() {
       <nav className={classes.navigation}>
         <ul>
           <li>
-            <Link href="/events">Browse All Matches</Link>
+            <Link href="/matches">Browse All Matches</Link>
           </li>
         </ul>
       </nav>
