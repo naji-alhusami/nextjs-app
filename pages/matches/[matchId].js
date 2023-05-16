@@ -2,6 +2,7 @@ import { getMatchById, getFeaturedMatches } from "../../helpers/api-util";
 import MatchSummary from "../../components/match-detail/match-summary";
 import MatchLogistics from "../../components/match-detail/match-logistics";
 import MatchContent from "../../components/match-detail/match-content";
+import Comments from "../../components/input/comments";
 
 function MatchDetailPage(props) {
   const match = props.selectedMatch;
@@ -26,6 +27,7 @@ function MatchDetailPage(props) {
       <MatchContent>
         <p>{match.description}</p>
       </MatchContent>
+      <Comments matchId={match.id} />
     </>
   );
 }

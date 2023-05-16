@@ -1,9 +1,11 @@
 import { getFeaturedMatches } from "../helpers/api-util";
 import MatchList from "../components/matches/match-list";
+import NewsletterRegistration from "../components/input/newsletter-registration";
 
 function HomePage(props) {
   return (
     <div>
+      <NewsletterRegistration />
       <MatchList items={props.matches} />
     </div>
   );
